@@ -1,0 +1,13 @@
+= TV
+
+Ispisuje sto je na TV-u, sa tvprofil.net, ili trazi navedeni string u TV programu
+
+== Usage
+
+  Nakon prilagodbe kanala u `chlist` u tv.rb-u:
+
+  $ tv [search string]
+
+== Requirements
+
+  $ gem i hpricot
