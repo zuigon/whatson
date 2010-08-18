@@ -1,16 +1,26 @@
 = TV
 
-Ispisuje sto je na TV-u, sa tvprofil.net, ili trazi navedeni string u TV programu
+Ispisuje sto je na TV-u, sa tvprofil.net.
 
-== Installation
+== Instalacija
 
   $ curl http://github.com/bkrsta/whatson/raw/master/tv.rb > ~/bin/tv
 
 == Usage
 
-Nakon prilagodbe kanala u `chlist` u tv.rb-u:
+Nakon prilagodbe kanala u varijabli `chlist` u tv.rb-u:
 
-  $ tv [search string]
+  # Ispis TV programa odabranih kanala
+  $ tv
+  
+  # Pretraga programa
+  $ tv [string]
+  
+  # Mark - oznacuje sve entryje koje sadrze mark string
+  $ tv /marks  # ispis
+  $ tv /mark dnevnik  # dodaje dnevnik u ~/.tvmarks
+  # ponavljanje `tv /mark dnevnik` ce obrisati dnevnik iz markova, jer vec postoji
+
 
 == Requirements
 
