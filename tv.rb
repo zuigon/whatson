@@ -22,7 +22,7 @@ end
 #        - moze sadrzavati i '*', wildcard
 
 # chlist = (1..4)
-chlist = %w(htv* rtl)
+chlist = %w(htv* rtl nova\ tv)
 
 trenutno, kanali = doc.search('#tab_trenutno'), []
 trenutno.search('.phbox').each{ |x|
