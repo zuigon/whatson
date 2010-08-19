@@ -74,7 +74,7 @@ end
 
 if %w(/mark).include? ARGV[0]
   if x=ARGV[1]
-    re = /^[a-zA-Z0-9_\-]+$/
+    re = /^[a-zA-Z0-9_\-\+]+$/
     if x =~ re
       if marks.include? x
         del_mark x
@@ -132,7 +132,7 @@ if ARGV[0]
       ime  = (z.search('a').count==1) ? z.at('a').inner_text : z.inner_text.strip
       curr = !!(z[:class] =~ /currently/)
       @ocurr_prev = @ocurr
-      @ocurr = ime =~ /#{findstr}/i
+      @ocurr = ime =~ /#{findstr.gsub /\+/, '.*'}/i
       if @ocurr
         found << "   ...\n" && razmak=0 if razmak>1
         mr = marked? ime
