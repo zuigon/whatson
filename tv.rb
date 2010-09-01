@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-TV_VER = 'v1.1'
+TV_VER = 'v1.2'
 
 @markf = File.expand_path '~/.tvmarks'
 
@@ -123,7 +123,7 @@ trenutno.search('.phbox').each{ |x|
 if ARGV[0]
   findstr = ARGV.join ' '
   @ocurr = nil
-  found = 0
+  @found = 0
   kanali.each { |k|
     found, razmak = [], 0
     k.search('.phrows > div').each { |z|
@@ -138,6 +138,7 @@ if ARGV[0]
         mr = marked? ime
         found << "#{curr ? '=>' : '  '} #{'[[ ' if mr}#{time} - #{ime}#{' ]]' if mr}\n"
         razmak=0
+        @found+=1
       end
       razmak += 1
     }
@@ -146,7 +147,7 @@ if ARGV[0]
       puts found.join
     end
   }
-  if found.empty?
+  if @found==0
     puts "Nije pronadjen entry sa #{findstr}"
   end
 else
