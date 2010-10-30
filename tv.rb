@@ -74,7 +74,7 @@ end
 
 if %w(/mark).include? ARGV[0]
   if x=ARGV[1]
-    re = /^[a-zA-Z0-9_\-\+]+$/
+    re = /^[a-zA-Z0-9_\-\+\ ]+$/
     if x =~ re
       if marks.include? x
         del_mark x
